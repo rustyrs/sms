@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../common/header.html" %>
+<%@include file="../common/header.jsp" %>
 
 <p>メニュー画面</p>
 
@@ -9,4 +9,4 @@
 <a href="delete">学生削除</a>
 <a href="update">学生更新</a>
 
-<%@include file="../common/footer.html" %>
+<%@include file="../common/footer.jsp" %>

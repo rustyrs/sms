@@ -79,6 +79,25 @@ public class StudentDAO {
 		return line;
 	}
 	
+	// 生徒情報更新
+	public int update(Student s, int id) throws Exception {
+			
+		Connection con = DAO.getConnection();
+			
+		PreparedStatement st = con.prepareStatement(
+				"UPDATE students SET student_id=?, student_name=?, course_id=? WHERE student_id=?"
+		);
+		st.setInt(1, s.getId());
+		st.setString(2, s.getName());
+		st.setInt(3, s.getCourse());
+		st.setInt(4, id);
+		int line=st.executeUpdate();
+			
+		st.close();
+		con.close();
+		return line;
+	}
+	
 	// 生徒削除
 	public int delete(int id) throws Exception {
 		

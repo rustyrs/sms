@@ -1,9 +1,11 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../../common/header.jsp" %>
 
-<p>追加する学生の情報を入力してください。</p>
+<form action="update" method="post">
+	更新する生徒のID:
+	<input type="text" name="target"><br><br>
 
-<form action="register" method="post">
+	更新後の<br>
 	学生番号: <input type="number" name="id"><br>
 	学生名: <input type="text" name="name"><br>
 	コース番号: 

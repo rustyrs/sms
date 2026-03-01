@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../../common/header.html" %>
+<%@include file="../../common/header.jsp" %>
 
 <form action="delete" method="post">
 	削除する生徒のID:
@@ -10,4 +10,4 @@
 
 <a href="menu">メニューへ</a>
 
-<%@include file="../../common/footer.html" %>
+<%@include file="../../common/footer.jsp" %>

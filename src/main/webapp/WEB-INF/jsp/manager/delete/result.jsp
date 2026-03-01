@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../../common/header.html" %>
+<%@include file="../../common/header.jsp" %>
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 
 <c:choose>
@@ -11,4 +11,4 @@
 
 <a href="menu">メニューへ</a>
 
-<%@include file="../../common/footer.html" %>
+<%@include file="../../common/footer.jsp" %>
