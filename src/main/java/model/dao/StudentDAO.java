@@ -9,7 +9,7 @@ import java.util.List;
 import model.bean.Student;
 
 public class StudentDAO {
-	// studentsテーブル全取得
+	// 全取得
 	public List<Student> getAll() throws Exception {
 		
 		List<Student> list = new ArrayList<>();
@@ -21,11 +21,11 @@ public class StudentDAO {
 		ResultSet rs = st.executeQuery();
 		
 		while (rs.next()) {
-			Student p = new Student();
-			p.setId(rs.getInt("student_id"));
-			p.setName(rs.getString("student_name"));
-			p.setCourse(rs.getInt("course_id"));
-			list.add(p);
+			Student s = new Student();
+			s.setId(rs.getInt("student_id"));
+			s.setName(rs.getString("student_name"));
+			s.setCourse(rs.getInt("course_id"));
+			list.add(s);
 		}
 		
 		rs.close();
@@ -33,5 +33,32 @@ public class StudentDAO {
 		con.close();
 		
 		return list;	
+	}
+	
+	// 名前で絞り込み
+	public List<Student> findByName(String name) throws Exception {
+		
+		List<Student> list = new ArrayList<>();
+		Connection con = DAO.getConnection();
+		
+		PreparedStatement st=con.prepareStatement(
+				"SELECT * FROM students WHERE student_name = ?"
+		);
+		st.setString(1, name);
+		ResultSet rs=st.executeQuery();
+		
+		while (rs.next()) {
+			Student s = new Student();
+			s.setId(rs.getInt("student_id"));
+			s.setName(rs.getString("student_name"));
+			s.setCourse(rs.getInt("course_id"));
+			list.add(s);
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		return list;
 	}
 }
