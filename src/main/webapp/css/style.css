@@ -1,4 +1,36 @@
-html {
-	background-color: #0B0F14;
-	color: #F1F5F9;
+body, html {
+	background-color: #F3F4F6;
+	color: #374151;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: #0F766E;
+}
+
+header {
+	border: solid #1F2937 1px;
+	margin: 0;
+	background-color: #1F2937;
+	height: 5rem;
+	color: #FFFFFF;
+	padding: 0;
+}
+
+#mode {
+	margin: 0.5rem 1.5rem 0 0;
+	padding-left: 0.5rem;
+	border: solid #1F2937 1px;
+	width: 50%;
+}
+
+nav {
+	display: flex;
+	margin-left: 10rem;
+	align-items: center;
+}
+
+.headerLink {
+	margin-right: 2.5rem;
 }
