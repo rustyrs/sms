@@ -8,6 +8,6 @@
 	<input type="submit">
 </form>
 
-<a href="../menu">メニューへ</a>
+<a href="menu">メニューへ</a>
 
 <%@include file="../../common/footer.html" %>

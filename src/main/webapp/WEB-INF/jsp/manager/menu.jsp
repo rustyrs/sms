@@ -5,8 +5,8 @@
 
 <a href="list">学生一覧</a>
 <a href="search">学生検索</a>
-<a href="register/input.jsp">学生追加</a>
-<a href="delete/input.jsp">学生削除</a>
-<a href="update/input.jsp">学生更新</a>
+<a href="register">学生追加</a>
+<a href="delete">学生削除</a>
+<a href="update">学生更新</a>
 
 <%@include file="../common/footer.html" %>

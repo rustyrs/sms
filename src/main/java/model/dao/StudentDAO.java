@@ -61,4 +61,21 @@ public class StudentDAO {
 		
 		return list;
 	}
+	
+	// 学生追加
+	public int create(Student s) throws Exception {
+		Connection con = DAO.getConnection();
+		
+		PreparedStatement st = con.prepareStatement(
+				"INSERT INTO students(student_id, student_name, course_id) VALUES(?, ?, ?)"
+		);
+		st.setInt(1, s.getId());
+		st.setString(2, s.getName());
+		st.setInt(3, s.getCourse());
+		int line = st.executeUpdate();
+		
+		st.close();
+		con.close();
+		return line;
+	}
 }
