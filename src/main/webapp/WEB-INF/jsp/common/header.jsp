@@ -12,6 +12,7 @@
 <header>
 <h3 id="mode">管理者モード</h3>
 <nav>
+<a href="menu" class="headerLink">メニュー</a>
 <a href="list" class="headerLink">学生一覧</a>
 <a href="search" class="headerLink">学生検索</a>
 <a href="register" class="headerLink">学生追加</a>

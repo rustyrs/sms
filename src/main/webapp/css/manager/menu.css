@@ -1,0 +1,39 @@
+html, body {
+	background-color: #F3F4F6;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	color: #374151;
+}
+
+a {
+	background-color: rgb(218, 224, 220);
+	color: #0F766E;
+	width: 10rem;
+	height: 4rem;
+	border-right: solid 1px gray;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+ul, li {
+	margin-left: 0;
+	padding: 0;
+}
+
+#function-list{
+	padding: 0;
+	margin-left: 0;
+	list-style: none;
+}
+
+.function {
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	display: flex;
+	border-bottom: solid 1px gray;
+}

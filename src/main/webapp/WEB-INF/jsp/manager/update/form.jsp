@@ -1,6 +1,8 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../../common/header.jsp" %>
 
+<h2>学生更新</h2>
+
 <form action="update" method="post">
 	更新する生徒のID:
 	<input type="text" name="target"><br><br>
@@ -13,11 +15,9 @@
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
-	</select><br>
+	</select><br><br>
 	
-	<input type="submit" value="送信"><br>
-	
-	<a href="menu">メニューへ</a>
+	<input type="submit" value="送信">
 </form>
 
 <%@include file="../../common/footer.jsp" %>

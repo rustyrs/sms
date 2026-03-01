@@ -1,6 +1,8 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../../common/header.jsp" %>
 
+<h2>学生追加</h2>
+
 <p>追加する学生の情報を入力してください。</p>
 
 <form action="register" method="post">
@@ -14,8 +16,7 @@
 	</select><br>
 	
 	<input type="submit" value="送信"><br>
-	
-	<a href="menu">メニューへ</a>
+
 </form>
 
 <%@include file="../../common/footer.jsp" %>

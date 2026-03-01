@@ -2,6 +2,8 @@
 <%@include file="../common/header.jsp" %>
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 
+<h2>学生一覧</h2>
+
 <table border="1">
 	<thead>
 		<tr>
@@ -22,6 +24,5 @@
 	</c:forEach>
 </table>
 
-<a href="menu">メニューへ戻る</a>
 
 <%@include file="../common/footer.jsp" %>
