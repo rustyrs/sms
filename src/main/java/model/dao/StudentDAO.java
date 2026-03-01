@@ -78,4 +78,20 @@ public class StudentDAO {
 		con.close();
 		return line;
 	}
+	
+	// 生徒削除
+	public int delete(int id) throws Exception {
+		
+		Connection con = DAO.getConnection();
+		
+		PreparedStatement st = con.prepareStatement(
+				"DELETE FROM students WHERE student_id = ?"
+		);
+		st.setInt(1, id);
+		int line=st.executeUpdate();
+		
+		st.close();
+		con.close();
+		return line;
+	}
 }
