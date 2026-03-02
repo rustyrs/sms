@@ -1,5 +1,5 @@
 ## students
-```
+```sql
 CREATE TABLE students (
 	student_id int primary key,
 	student_name varchar(255) not null,
@@ -12,7 +12,7 @@ INSERT INTO STUDENT VALUES (3,'大原　花子',1);
 ```
 
 ## managers
-```managers
+```sql
 CREATE TABLE managers (
   id varchar(255) primary key,
   name varchar(255) not null,
@@ -25,7 +25,7 @@ INSERT INTO managers VALUES ('teacher3', '検見川浜','GreatestTeacher');
 ```
 
 ## courses
-```courses
+```sql
 CREATE TABLE courses (
   id int primary key,
   name varchar(255) not null
@@ -34,4 +34,17 @@ CREATE TABLE courses (
 INSERT INTO courses VALUES (1, 'システム開発');
 INSERT INTO courses VALUES (2, '高度システム開発');
 INSERT INTO courses VALUES (3, 'ネットワークセキュリティ');
+```
+
+## student_details
+```sql
+CREATE TABLE student_details (
+    id int PRIMARY KEY REFERENCES students(student_id),
+    password varchar(255) not null,
+    comment varchar(255)
+);
+
+INSERT INTO student_details VALUES (1, 'password', 'やっほー');
+INSERT INTO student_details VALUES (2, 'password', '営業中');
+INSERT INTO student_details VALUES (4, 'password',  'テスト用アカウント');
 ```

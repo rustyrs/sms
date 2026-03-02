@@ -22,6 +22,7 @@ public class LoginFilter implements Filter {
 		
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
+		
 	   
 		HttpSession session = httpRequest.getSession();
 		Object isLogin = session.getAttribute("isLogin");
@@ -29,6 +30,9 @@ public class LoginFilter implements Filter {
 		if ((isLogin == null) || ((boolean)isLogin == false)) {
 			httpResponse.sendRedirect("/sms/login");
 			return;
+		} else {
+			String name = (String) session.getAttribute("name");
+			request.setAttribute("name", name);	
 		}
 		
 		chain.doFilter(request, response);

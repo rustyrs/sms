@@ -12,7 +12,7 @@
 <body>
 <header>
 <h3 id="mode">管理者モード</h3>
-
+<c:if test="${!empty name}">${name}</c:if>
 </header>
 
 <h2>メニュー</h2>

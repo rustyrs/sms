@@ -19,4 +19,5 @@
 <a href="delete" class="headerLink">学生削除</a>
 <a href="update" class="headerLink">学生更新</a>
 </nav>
+<c:if test="${!empty name}">${name}</c:if>
 </header>
