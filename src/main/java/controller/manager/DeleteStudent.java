@@ -12,12 +12,12 @@ import model.dao.StudentDAO;
 
 // 学生登録クラス
 
-@WebServlet(urlPatterns={"/delete"})
+@WebServlet(urlPatterns={"/manager/delete"})
 public class DeleteStudent extends HttpServlet {
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {	
-		request.getRequestDispatcher("WEB-INF/jsp/manager/delete/form.jsp")
+		request.getRequestDispatcher("../WEB-INF/jsp/manager/delete/form.jsp")
 			.forward(request, response);
 	}
 	
@@ -45,7 +45,7 @@ public class DeleteStudent extends HttpServlet {
 			request.setAttribute("result", false);
 		}
 		
-		request.getRequestDispatcher("WEB-INF/jsp/manager/delete/result.jsp")
+		request.getRequestDispatcher("../WEB-INF/jsp/manager/delete/result.jsp")
 			.forward(request, response);
 	}
 }

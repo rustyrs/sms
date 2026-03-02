@@ -10,13 +10,13 @@ import jakarta.servlet.http.HttpServletResponse;
 
 // メニュークラス
 
-@WebServlet(urlPatterns={"/menu"})
+@WebServlet(urlPatterns={"/manager/menu"})
 public class Menu extends HttpServlet {
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("WEB-INF/jsp/manager/menu.jsp")
+		request.getRequestDispatcher("../WEB-INF/jsp/manager/menu.jsp")
 			.forward(request, response);
 	}
 }

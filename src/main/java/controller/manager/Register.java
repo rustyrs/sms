@@ -13,12 +13,12 @@ import model.dao.StudentDAO;
 
 // 学生登録クラス
 
-@WebServlet(urlPatterns={"/register"})
+@WebServlet(urlPatterns={"/manager/register"})
 public class Register extends HttpServlet {
 	public void doGet(
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/jsp/manager/register/form.jsp")
+		request.getRequestDispatcher("../WEB-INF/jsp/manager/register/form.jsp")
 		.forward(request, response);
 	}
 	public void doPost (
@@ -48,7 +48,7 @@ public class Register extends HttpServlet {
 			request.setAttribute("result", false);
 		}
 		
-		request.getRequestDispatcher("WEB-INF/jsp/manager/register/result.jsp")
+		request.getRequestDispatcher("../WEB-INF/jsp/manager/register/result.jsp")
 			.forward(request, response);
 	}
 }

@@ -15,12 +15,13 @@ INSERT INTO STUDENT VALUES (3,'大原　花子',1);
 ```managers
 CREATE TABLE managers (
   id varchar(255) primary key,
+  name varchar(255) not null,
   password varchar(255) not null
 );
 
-INSERT INTO managers VALUES ('teacher1','IThinkPeopleLikeMe');
-INSERT INTO managers VALUES ('teacher2','password123');
-INSERT INTO managers VALUES ('teacher3','GreatestTeacher');
+INSERT INTO managers VALUES ('teacher1', '山崎由好','IThinkPeopleLikeMe');
+INSERT INTO managers VALUES ('teacher2', '晴彦猿彦','password123');
+INSERT INTO managers VALUES ('teacher3', '検見川浜','GreatestTeacher');
 ```
 
 ## courses

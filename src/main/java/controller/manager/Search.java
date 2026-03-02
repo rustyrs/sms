@@ -13,12 +13,12 @@ import model.dao.StudentDAO;
 
 // 生徒検索クラス
 
-@WebServlet(urlPatterns={"/search"})
+@WebServlet(urlPatterns={"/manager/search"})
 public class Search extends HttpServlet {
 	public void doGet(
 			HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/jsp/manager/search/form.jsp")
+		request.getRequestDispatcher("../WEB-INF/jsp/manager/search/form.jsp")
 		.forward(request, response);
 	}
 	
@@ -37,7 +37,7 @@ public class Search extends HttpServlet {
 			request.setAttribute("error", e);
 		}
 		
-		request.getRequestDispatcher("WEB-INF/jsp/manager/search/list.jsp")
+		request.getRequestDispatcher("../WEB-INF/jsp/manager/search/list.jsp")
 			.forward(request, response);
 	}
 }
