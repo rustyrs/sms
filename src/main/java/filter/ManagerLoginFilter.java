@@ -22,10 +22,9 @@ public class ManagerLoginFilter implements Filter {
 		
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
-		
-		
+				
 		String path = httpRequest.getRequestURI();
-		System.out.println(path);
+
 		if (path.startsWith("/sms/login")) {
 			chain.doFilter(request, response);
 			return;

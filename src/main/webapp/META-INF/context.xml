@@ -11,5 +11,5 @@
 		url="jdbc:h2:~/sms"
 		username="sa"
 		password=""
-	/>
+	cachingAllowed="false"/>
 </Context>

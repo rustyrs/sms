@@ -2,13 +2,13 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 
 <jsp:include page="/WEB-INF/jsp/common/header.jsp">
-    <jsp:param name="cssPath" value="css/login.css" />
+    <jsp:param name="cssPath" value="/css/login.css" />
 </jsp:include>
 
 <h2>Student Management System</h2>
 
-<div id="login">
-	<form action="login" method="post" id="manager" class="card">
+<div id="login-form">
+	<form action="login" method="post" id="login">
 		ID<br>
 		<input type="text" name="id"><br><br>
 		パスワード<input type="password" name="password"><br>
