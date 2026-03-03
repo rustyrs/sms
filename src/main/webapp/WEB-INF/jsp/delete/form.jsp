@@ -1,6 +1,10 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../common/header.jsp" %>
 
+<jsp:include page="header.jsp">
+    <jsp:param name="cssPath" value="/css/student-list.css" />
+</jsp:include>
+
 <h2>学生削除</h2>
 
 <form action="delete" method="post">

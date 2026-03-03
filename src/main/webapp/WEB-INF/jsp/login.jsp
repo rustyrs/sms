@@ -1,14 +1,9 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 <%@page contentType="text/html; charset=UTF-8" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Students Management System</title>
-<link rel="stylesheet" href="<c:url value='css/login.css' />">
-</head>
-<body>
+<jsp:include page="/WEB-INF/jsp/common/header.jsp">
+    <jsp:param name="cssPath" value="css/login.css" />
+</jsp:include>
 
 <h2>Student Management System</h2>
 

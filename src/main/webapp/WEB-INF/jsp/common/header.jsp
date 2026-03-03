@@ -7,10 +7,14 @@
 <meta charset="UTF-8">
 <title>Students Management System</title>
 <link rel="stylesheet" href="<c:url value='/css/style.css' />">
+<c:if test="${!empty param.cssPath}">
+    <link rel="stylesheet" href="<c:url value='${param.cssPath}' />" /">
+</c:if>
+<link rel="stylesheet" href= />
 </head>
 <body>
 <header>
-<h3 id="mode">管理者モード</h3>
+<h3 id="mode"><c:if test="${!empty name}">${name}</c:if></h3>
 <nav>
 <a href="menu" class="headerLink">メニュー</a>
 <a href="list" class="headerLink">学生一覧</a>
@@ -19,5 +23,4 @@
 <a href="delete" class="headerLink">学生削除</a>
 <a href="update" class="headerLink">学生更新</a>
 </nav>
-<c:if test="${!empty name}">${name}</c:if>
 </header>
