@@ -13,8 +13,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = {"/manager/*"})
-public class LoginFilter implements Filter {
+@WebFilter(urlPatterns = {"/student/*"})
+public class StudentLoginFilter implements Filter {
 	public void doFilter(
 		ServletRequest request, ServletResponse response,
 		FilterChain chain
@@ -23,9 +23,8 @@ public class LoginFilter implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		
-	   
 		HttpSession session = httpRequest.getSession();
-		Object isLogin = session.getAttribute("isLogin");
+		Object isLogin = session.getAttribute("studentIsLogin");
 		
 		if ((isLogin == null) || ((boolean)isLogin == false)) {
 			httpResponse.sendRedirect("/sms/login");

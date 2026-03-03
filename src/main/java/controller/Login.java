@@ -9,7 +9,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.bean.Manager;
+import model.bean.StudentDetail;
 import model.dao.ManagerDAO;
+import model.dao.StudentDetailDAO;
 
 
 @WebServlet(urlPatterns={"/login"})
@@ -29,8 +31,10 @@ public class Login extends HttpServlet {
 
 		// Form取得&初期化
 		String id = request.getParameter("id");
+		String numberString = request.getParameter("num");
 		String password = request.getParameter("password");
-		ManagerDAO dao = new ManagerDAO();
+		ManagerDAO managerDao = new ManagerDAO();
+		StudentDetailDAO studentDetailDao = new StudentDetailDAO();
 		HttpSession session = request.getSession();
 		
 		String nextPage = "login" ;
@@ -38,16 +42,16 @@ public class Login extends HttpServlet {
 		boolean studentUnsuccess = false;
 		boolean managerUnsuccess = false;
 		
-		if (password != null) {
+		if (id!= null) {
 			 // 管理者・教員
 			try {
-				boolean isExists = dao.login(id, password);
+				boolean isExists = managerDao.login(id, password);
 				if (isExists) {
-					studentUnsuccess = false;
-					session.setAttribute("isLogin", true);
+					managerUnsuccess = false;
+					session.setAttribute("managerIsLogin", true);
 					session.setAttribute("mode", "manager");
 					
-					Manager m = dao.getDetail(id, password);
+					Manager m = managerDao.getDetail(id, password);
 					
 					session.setAttribute("id", m.getId() );
 					session.setAttribute("name", m.getName() );
@@ -60,15 +64,35 @@ public class Login extends HttpServlet {
 				request.setAttribute("error", e);
 			}
 		} else {
-			// 生徒
-			
+			// 学生
+			try {
+				System.out.println("学生がログインを試みました");
+				int number = Integer.parseInt(numberString);
+				boolean isExists = studentDetailDao.login(number, password);
+				if (isExists) {
+					System.out.println("発見");
+					studentUnsuccess = false;
+					session.setAttribute("studentIsLogin", true);
+					session.setAttribute("mode", "student");
+					
+					StudentDetail s = studentDetailDao.getDetail(number, password);
+					
+					session.setAttribute("number", s.getNumber());
+					session.setAttribute("name",  s.getName());
+					session.setAttribute("comment", s.getComment());
+					
+					nextPage = "student/menu";
+				} else {
+					studentUnsuccess = true;
+				}
+			} catch (Exception e) {
+				request.setAttribute("error", e);
+			}
 		}
 		
 		request.setAttribute("studentUnsuccess", studentUnsuccess);
 		request.setAttribute("managerUnsuccess", managerUnsuccess);
-//		
-//		request.getRequestDispatcher(nextPage)
-//			.forward(request, response);
+		
 		response.sendRedirect(nextPage);
 	}
 }

@@ -39,7 +39,7 @@ INSERT INTO courses VALUES (3, 'ネットワークセキュリティ');
 ## student_details
 ```sql
 CREATE TABLE student_details (
-    id int PRIMARY KEY REFERENCES students(student_id),
+    number int PRIMARY KEY REFERENCES students(student_id),
     password varchar(255) not null,
     comment varchar(255)
 );

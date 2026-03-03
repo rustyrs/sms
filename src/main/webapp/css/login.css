@@ -1,5 +1,5 @@
 html, body {
-	background-color: #9CD5FF;
+	background-color: #F6F6F6;
 	color: #374151;
 	height: 100%;
 	width: 100%;
@@ -24,16 +24,17 @@ h2 {
 }
 
 .card {
+	transition: all 0.3s ease-in-out;
 	justify-content: center;
 	align-items: center;
 	border-radius: 10%;
 	height: 40%;
 	padding: 2rem;
-	 box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+	 box-shadow: -5px -5px 10px 0px rgba(235, 235, 235, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
-	box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.8), 5px 5px 10px 0px rgba(0, 0, 0, 0.8)
+	box-shadow: -8px -8px 13px 0px rgba(205, 205, 205, 0.6), 8px 8px 13px 0px rgba(0, 0, 0, 0.4)
 }
 
 #manager {

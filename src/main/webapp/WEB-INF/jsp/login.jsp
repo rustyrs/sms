@@ -10,12 +10,15 @@
 </head>
 <body>
 
-<h2>ログイン</h2>
+<h2>Student Management System</h2>
 
 <div id="login">
 	<form action="login" method="post" id="student" class="card">
-		<h3>学生番号</h3>
-		<input type="text" name="id"><br>
+		<h3>学生</h3>
+		学生番号<br>
+		<input type="text" name="number"><br>
+		パスワード<input type="password" name="password"><br>
+		<br>
 		<br>
 		<input type="submit" value="    " class="submit"><br>
 		<c:if test="${studentUnsuccess}">ログインに失敗しました</c:if>

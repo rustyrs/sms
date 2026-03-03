@@ -62,6 +62,30 @@ public class StudentDAO {
 		return list;
 	}
 	
+	// IDで名前を返す
+    public String findById(int id) throws Exception {
+		
+		Connection con = DAO.getConnection();
+		
+		PreparedStatement st=con.prepareStatement(
+				"SELECT * FROM students WHERE student_id = ?"
+		);
+		st.setInt(1, id);
+		ResultSet rs=st.executeQuery();
+		
+		String name = null;
+		
+	    if (rs.next()) {
+			name = rs.getString("student_name");
+	    }
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		return name;
+	}
+	
 	// 学生追加
 	public int create(Student s) throws Exception {
 		Connection con = DAO.getConnection();
