@@ -1,6 +1,8 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 <%@page contentType="text/html; charset=UTF-8" %>
 
+<c:set var="currentPath" value="${pageContext.request.servletPath}" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,11 +18,11 @@
 <header>
 <h3 id="name"><c:if test="${!empty name}">${name}</c:if></h3>
 <nav id="header-nav">
-<a href="menu" class="header-link">メニュー</a>
-<a href="list" class="header-link">学生一覧</a>
-<a href="search" class="header-link">学生検索</a>
-<a href="register" class="header-link">学生追加</a>
-<a href="delete" class="header-link">学生削除</a>
-<a href="update" class="header-link">学生更新</a>
+<a href="menu" class="header-link" ${currentPath == '/WEB-INF/jsp/menu.jsp' ? 'id="current"' : ''}>メニュー</a>
+<a href="list" class="header-link" ${currentPath == '/WEB-INF/jsp/list.jsp' ? 'id="current"' : ''}>学生一覧</a>
+<a href="search" class="header-link" ${currentPath == '/WEB-INF/jsp/search/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/search/result.jsp' ? 'id="current"' : ''}>学生検索</a>
+<a href="register" class="header-link" ${currentPath == '/WEB-INF/jsp/register/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/register/result.jsp' ? 'id="current"' : ''}>学生追加</a>
+<a href="delete" class="header-link" ${currentPath == '/WEB-INF/jsp/delete/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/delete/result.jsp' ? 'id="current"' : ''}>学生削除</a>
+<a href="update" class="header-link" ${currentPath == '/WEB-INF/jsp/update/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/update/result.jsp' ? 'id="current"' : ''}>学生更新</a>
 </nav>
 </header>

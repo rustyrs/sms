@@ -1,18 +1,9 @@
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 <%@page contentType="text/html; charset=UTF-8" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Students Management System</title>
-<link rel="stylesheet" href="<c:url value='/css/style.css' />">
-<link rel="stylesheet" href="<c:url value='/css/menu.css' />">
-</head>
-<body>
-<header>
-<h3 id="mode"><c:if test="${!empty name}">${name}</c:if></h3>
-</header>
+<jsp:include page="/WEB-INF/jsp/common/header.jsp">
+    <jsp:param name="cssPath" value="/css/lmenu.css" />
+</jsp:include>
 
 <h2>メニュー</h2>
 

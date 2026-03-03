@@ -1,11 +1,12 @@
 html {
-	background-color: #F6F6F6;
+	background-color: #FFFFF0;
 	color: #333333;
 	padding: 0;
 	margin: 0;
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 a,a:link,a:visited,a:hover,a:active{
@@ -23,4 +24,57 @@ a,a:link,a:visited,a:hover,a:active{
 	cursor:default;
 	
 	color: #8785A2;
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+table tr:hover{
+  background-color: #d4f0fd;
+}
+
+table th,table td{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+}
+
+.input {
+  border: 2px solid transparent;
+  width: 15em;
+  height: 2.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
+}
+
+.button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        appearance: none;
+        
+        border: solid #1F2937 1px;
+        padding: 0.3rem;
+        border-radius: 10%;
 }

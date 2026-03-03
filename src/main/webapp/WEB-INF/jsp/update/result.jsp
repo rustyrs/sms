@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="common/header.jsp" %>
+<%@include file="../common/header.jsp" %>
 <%@taglib prefix="c" uri="jakarta.tags.core" %>
 
 <h2>学生更新</h2>
@@ -10,4 +10,4 @@
 </c:choose>
 
 
-<%@include file="common/footer.jsp" %>
+<%@include file="../common/footer.jsp" %>
