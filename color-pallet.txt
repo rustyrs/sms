@@ -1,0 +1,12 @@
+background
+- #F6F6F6
+
+main color
+- #FFC7C7
+- #FFE2E2
+
+accent color
+- #8785A2
+
+main text color 
+- #333333

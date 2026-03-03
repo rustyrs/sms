@@ -7,12 +7,11 @@
 <meta charset="UTF-8">
 <title>Students Management System</title>
 <link rel="stylesheet" href="<c:url value='/css/style.css' />">
-<link rel="stylesheet" href="<c:url value='/css/manager/menu.css' />">
+<link rel="stylesheet" href="<c:url value='/css/menu.css' />">
 </head>
 <body>
 <header>
-<h3 id="mode">管理者モード</h3>
-<c:if test="${!empty name}">${name}</c:if>
+<h3 id="mode"><c:if test="${!empty name}">${name}</c:if></h3>
 </header>
 
 <h2>メニュー</h2>

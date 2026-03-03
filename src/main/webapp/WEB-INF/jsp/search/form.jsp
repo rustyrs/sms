@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../../common/header.jsp" %>
+<%@include file="../common/header.jsp" %>
 
 <h2>学生検索</h2>
 
@@ -10,4 +10,4 @@
 	<input type="submit">
 </form>
 
-<%@include file="../../common/footer.jsp" %>
+<%@include file="../common/footer.jsp" %>

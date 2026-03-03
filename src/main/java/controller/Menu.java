@@ -1,4 +1,4 @@
-package controller.student;
+package controller;
 
 import java.io.IOException;
 
@@ -8,15 +8,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+// メニュークラス
 
-// 自分のプロフィール
-
-@WebServlet(urlPatterns={"/student/my-profile"})
-public class MyProfile extends HttpServlet {
-	public void doGet(
+@WebServlet(urlPatterns={"/menu"})
+public class Menu extends HttpServlet {
+	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
-		request.getRequestDispatcher("../WEB-INF/jsp/student/my-profile/view.jsp")
-		.forward(request, response);
+		
+		request.getRequestDispatcher("WEB-INF/jsp/menu.jsp")
+			.forward(request, response);
 	}
 }

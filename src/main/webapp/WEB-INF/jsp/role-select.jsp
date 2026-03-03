@@ -5,7 +5,7 @@
 	<a href="/student/login">
 		<button class="mode" id="student">学生</button>
 	</a>
-	<a href="/manager/login">
+	<a href="/login">
 		<button class="mode" id="manager">管理</button>
 	</a>
 </div>

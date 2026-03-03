@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../../common/header.jsp" %>
+<%@include file="../common/header.jsp" %>
 
 <h2>学生削除</h2>
 
@@ -11,4 +11,4 @@
 </form>
 
 
-<%@include file="../../common/footer.jsp" %>
+<%@include file="../common/footer.jsp" %>

@@ -1,4 +1,4 @@
-package controller.manager;
+package controller;
 
 import java.io.IOException;
 
@@ -13,16 +13,14 @@ import model.dao.StudentDAO;
 
 // 学生登録クラス
 
-@WebServlet(urlPatterns={"/manager/update"})
-public class UpdateStudent extends HttpServlet {
-	
-	public void doGet (
+@WebServlet(urlPatterns={"/register"})
+public class Register extends HttpServlet {
+	public void doGet(
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
-		request.getRequestDispatcher("../WEB-INF/jsp/manager/update/form.jsp")
+		request.getRequestDispatcher("WEB-INF/jsp/register/form.jsp")
 		.forward(request, response);
 	}
-	
 	public void doPost (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
@@ -33,14 +31,12 @@ public class UpdateStudent extends HttpServlet {
 		int course = Integer.parseInt(request.getParameter("course"));
 		Student s = new Student(id, name, course);
 		
-		int target = Integer.parseInt(request.getParameter("target"));
-		
 		StudentDAO dao = new StudentDAO();
 		 
 		int lines = 0; // 成功失敗判定用
 		
 		try {
-			lines = dao.update(s, target);			
+			lines = dao.create(s);			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -52,7 +48,7 @@ public class UpdateStudent extends HttpServlet {
 			request.setAttribute("result", false);
 		}
 		
-		request.getRequestDispatcher("../WEB-INF/jsp/manager/update/result.jsp")
+		request.getRequestDispatcher("WEB-INF/jsp/register/result.jsp")
 			.forward(request, response);
 	}
 }

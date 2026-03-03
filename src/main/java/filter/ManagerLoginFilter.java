@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = {"/manager/*"})
+@WebFilter(urlPatterns = {"/*"})
 public class ManagerLoginFilter implements Filter {
 	public void doFilter(
 		ServletRequest request, ServletResponse response,
@@ -23,6 +23,13 @@ public class ManagerLoginFilter implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		
+		
+		String path = httpRequest.getRequestURI();
+		System.out.println(path);
+		if (path.startsWith("/sms/login")) {
+			chain.doFilter(request, response);
+			return;
+		}
 	   
 		HttpSession session = httpRequest.getSession();
 		Object isLogin = session.getAttribute("managerIsLogin");

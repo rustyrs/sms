@@ -1,4 +1,4 @@
-package controller.manager;
+package controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,7 +13,7 @@ import model.dao.StudentDAO;
 
 // 生徒一覧表示クラス
 
-@WebServlet(urlPatterns={"/manager/list"})
+@WebServlet(urlPatterns={"/list"})
 public class StudentsList extends HttpServlet {
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
@@ -28,7 +28,7 @@ public class StudentsList extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		request.getRequestDispatcher("../WEB-INF/jsp/manager/list.jsp")
+		request.getRequestDispatcher("WEB-INF/jsp/list.jsp")
 			.forward(request, response);
 	}
 }
