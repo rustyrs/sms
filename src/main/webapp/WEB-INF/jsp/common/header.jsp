@@ -16,7 +16,10 @@
 </head>
 <body>
 <header>
-<h3 id="name"><c:if test="${!empty name}">${name}</c:if></h3>
+<h3 id="name">
+    <c:if test="${!empty name}">${name}</c:if>
+    <c:if test="${empty name}">SMS</c:if>    
+</h3>
 <nav id="header-nav">
 <a href="menu" class="header-link" ${currentPath == '/WEB-INF/jsp/menu.jsp' ? 'id="current"' : ''}>メニュー</a>
 <a href="list" class="header-link" ${currentPath == '/WEB-INF/jsp/list.jsp' ? 'id="current"' : ''}>学生一覧</a>

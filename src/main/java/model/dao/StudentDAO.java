@@ -62,6 +62,33 @@ public class StudentDAO {
 		return list;
 	}
 	
+	// 上のあいまい版
+public List<Student> findByNameFuzzy(String name) throws Exception {
+		
+		List<Student> list = new ArrayList<>();
+		Connection con = DAO.getConnection();
+		
+		PreparedStatement st=con.prepareStatement(
+				"SELECT * FROM students WHERE student_name like ?"
+		);
+		st.setString(1, "%"+name+"%");
+		ResultSet rs=st.executeQuery();
+		
+		while (rs.next()) {
+			Student s = new Student();
+			s.setId(rs.getInt("student_id"));
+			s.setName(rs.getString("student_name"));
+			s.setCourse(rs.getInt("course_id"));
+			list.add(s);
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		return list;
+	}
+	
 	// IDで名前を返す
     public String findById(int id) throws Exception {
 		

@@ -28,10 +28,17 @@ public class Search extends HttpServlet {
 		
 		// Form取得&初期化
 		String name = request.getParameter("name");
+		String fuzzy = request.getParameter("fuzzy");
 		StudentDAO dao = new StudentDAO();
 		
+		List<Student> students;
+		
 		try {
-			List<Student> students = dao.findByName(name);
+			if (fuzzy == null) {
+				students = dao.findByName(name);	
+			} else {
+				students = dao.findByNameFuzzy(name);
+			}
 			request.setAttribute("students", students);
 		} catch (Exception e) {
 			request.setAttribute("error", e);

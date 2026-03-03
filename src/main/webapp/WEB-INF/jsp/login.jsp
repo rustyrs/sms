@@ -14,7 +14,7 @@
 		パスワード<br>
 		<input type="password" name="password"><br>
 		<br>
-		<input type="submit" value="送信" ><br>
+		<input type="submit" value="送信" class="button"><br>
 		<c:if test="${managerUnsuccess}">ログインに失敗しました</c:if>
 	</form>
 </div>

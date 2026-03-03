@@ -24,8 +24,8 @@ public class ManagerLoginFilter implements Filter {
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 				
 		String path = httpRequest.getRequestURI();
-
-		if (path.startsWith("/sms/login")) {
+		
+		if (path.startsWith("/sms/login") || path.startsWith("/sms/css/")) {
 			chain.doFilter(request, response);
 			return;
 		}
