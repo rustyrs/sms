@@ -9,7 +9,7 @@
 
 <ul id="function-list">
 	<li class="function">
-        <a href="list">学生一覧</a>
+        <a href="student-list">学生一覧</a>
         <p>学生の一覧を表示します。特に操作はできません。</p>
 	</li>
 	

@@ -22,7 +22,7 @@
 </h3>
 <nav id="header-nav">
 <a href="menu" class="header-link" ${currentPath == '/WEB-INF/jsp/menu.jsp' ? 'id="current"' : ''}>メニュー</a>
-<a href="list" class="header-link" ${currentPath == '/WEB-INF/jsp/list.jsp' ? 'id="current"' : ''}>学生一覧</a>
+<a href="student-list" class="header-link" ${currentPath == '/WEB-INF/jsp/student-list.jsp' ? 'id="current"' : ''}>学生一覧</a>
 <a href="search" class="header-link" ${currentPath == '/WEB-INF/jsp/search/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/search/result.jsp' ? 'id="current"' : ''}>学生検索</a>
 <a href="register" class="header-link" ${currentPath == '/WEB-INF/jsp/register/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/register/result.jsp' ? 'id="current"' : ''}>学生追加</a>
 <a href="delete" class="header-link" ${currentPath == '/WEB-INF/jsp/delete/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/delete/result.jsp' ? 'id="current"' : ''}>学生削除</a>

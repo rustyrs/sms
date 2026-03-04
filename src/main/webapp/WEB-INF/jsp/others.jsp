@@ -13,7 +13,7 @@
 	<hr>
 	
 	<div class="card">
-		<a href="logs">ログ</a>
+		<a href="log-list">ログ</a>
 		<p>SMSの操作履歴を確認できます。</p>
 	</div>
 	

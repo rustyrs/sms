@@ -48,3 +48,14 @@ INSERT INTO student_details VALUES (1, 'password', 'やっほー');
 INSERT INTO student_details VALUES (2, 'password', '営業中');
 INSERT INTO student_details VALUES (4, 'password',  'テスト用アカウント');
 ```
+
+## logs
+```sqp
+CREATE TABLE logs (
+    log_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id VARCHAR(255)  REFERENCES managers(id),
+    action_type VARCHAR(255) NOT NULL,
+    target_table VARCHAR(255) NOT NULL,
+    actioned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```

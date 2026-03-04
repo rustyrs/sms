@@ -8,27 +8,27 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.bean.Student;
-import model.dao.StudentDAO;
+import model.bean.Log;
+import model.dao.LogDAO;
 
-// 生徒一覧表示クラス
+// ログ一覧表示クラス
 
-@WebServlet(urlPatterns={"/list"})
-public class StudentsList extends HttpServlet {
+@WebServlet(urlPatterns={"/log-list"})
+public class LogList extends HttpServlet {
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
 		
-		StudentDAO dao = new StudentDAO();
+		LogDAO dao = new LogDAO();
 		
 		try {
-			List<Student> students = dao.getAll();
-			request.setAttribute("students", students);
+			List<Log> logs = dao.getAll();
+			request.setAttribute("logs", logs);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		request.getRequestDispatcher("WEB-INF/jsp/list.jsp")
+		request.getRequestDispatcher("WEB-INF/jsp/log-list.jsp")
 			.forward(request, response);
 	}
 }
