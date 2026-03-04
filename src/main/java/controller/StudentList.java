@@ -8,8 +8,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.bean.Log;
 import model.bean.Student;
+import model.dao.LogDAO;
 import model.dao.StudentDAO;
+import session.Session;
 
 // 生徒一覧表示クラス
 
@@ -22,6 +25,8 @@ public class StudentList extends HttpServlet {
 		StudentDAO dao = new StudentDAO();
 		
 		try {
+			String userId = Session.get("id", request, response);
+			LogDAO.create(new Log(userId, "GET", "students"));
 			List<Student> students = dao.getAll();
 			request.setAttribute("students", students);
 		} catch (Exception e) {

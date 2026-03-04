@@ -12,3 +12,19 @@ table th,table td{
   width: 10%;
   padding: 15px 0;
 }
+
+#POST {
+	color: blue;
+}
+
+#UPDATE {
+	color: orange;
+}
+
+#GET {
+	color: green;
+}
+
+#DELETE {
+	color: red;
+}

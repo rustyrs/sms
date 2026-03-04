@@ -38,7 +38,7 @@ public class LogDAO {
 		}
 		
 		// 追加
-		public int create(Log log) throws Exception {
+		public static void create(Log log) throws Exception {
 			Connection con = DAO.getConnection();
 			
 			PreparedStatement st = con.prepareStatement(
@@ -51,6 +51,5 @@ public class LogDAO {
 			
 			st.close();
 			con.close();
-			return line;
 		}
 }

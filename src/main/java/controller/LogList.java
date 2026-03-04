@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.bean.Log;
 import model.dao.LogDAO;
+import session.Session;
 
 // ログ一覧表示クラス
 
@@ -22,6 +23,8 @@ public class LogList extends HttpServlet {
 		LogDAO dao = new LogDAO();
 		
 		try {
+			String userId = Session.get("id", request, response);
+			LogDAO.create(new Log(userId, "GET", "logs"));
 			List<Log> logs = dao.getAll();
 			request.setAttribute("logs", logs);
 		} catch (Exception e) {

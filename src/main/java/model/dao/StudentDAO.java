@@ -10,8 +10,7 @@ import model.bean.Student;
 
 public class StudentDAO {
 	// 全取得
-	public List<Student> getAll() throws Exception {
-		
+	public List<Student> getAll() throws Exception {		
 		List<Student> list = new ArrayList<>();
 		Connection con = DAO.getConnection();
 		

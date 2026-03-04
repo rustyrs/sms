@@ -8,8 +8,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.bean.Log;
 import model.bean.Student;
+import model.dao.LogDAO;
 import model.dao.StudentDAO;
+import session.Session;
 
 // 生徒検索クラス
 
@@ -34,6 +37,8 @@ public class Search extends HttpServlet {
 		List<Student> students;
 		
 		try {
+			String userId = Session.get("id", request, response);
+			LogDAO.create(new Log(userId, "GET", "students"));
 			if (fuzzy == null) {
 				students = dao.findByName(name);	
 			} else {

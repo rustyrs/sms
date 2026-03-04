@@ -7,7 +7,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.bean.Log;
+import model.dao.LogDAO;
 import model.dao.StudentDAO;
+import session.Session;
 
 
 // 学生登録クラス
@@ -33,6 +36,8 @@ public class DeleteStudent extends HttpServlet {
 		int lines = 0; // 成功失敗判定用
 		
 		try {
+			String userId = Session.get("id", request, response);
+			LogDAO.create(new Log(userId, "DELETE", "students"));
 			lines = dao.delete(id);			
 		} catch (Exception e) {
 			e.printStackTrace();

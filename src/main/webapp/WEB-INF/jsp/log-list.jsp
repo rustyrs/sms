@@ -18,14 +18,14 @@
 		</tr> 
 	</thead>
 	
-	<c:forEach var="s" items="${logs}">
+	<c:forEach var="log" items="${logs}">
 		<tbody>
 			<tr>
-				<th>${logs.logId}</th>
-				<th>${logs.userId}</th>
-				<th>${logs.actionType}</th>
-				<th>${logs.targetTable}</th>
-				<th>${logs.actionedAt}</th>
+				<th>${log.logId}</th>
+				<th>${log.userId}</th>
+				<th id="${log.actionType}">${log.actionType}</th>
+				<th>${log.targetTable}</th>
+				<th>${log.actionedAt}</th>
 			</tr>
 		</tbody>
 	</c:forEach>
