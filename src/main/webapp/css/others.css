@@ -1,0 +1,15 @@
+.role {
+	color: rgb(31, 41, 95);
+}
+
+#middle {
+	background-color: rgba(31, 41, 95, 0.1);
+}
+
+#high {
+	background-color: rgba(31, 41, 95, 0.2);
+}
+
+#supreme {
+	background-color: rgba(31, 41, 95, 0.3);
+}

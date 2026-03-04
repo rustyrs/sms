@@ -38,4 +38,18 @@ header {
 	box-shadow: inset 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
 }
 
-
+#watch {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	top: 92%;
+	left: 88.5%;
+	pointer-events: none;
+	border: solid 1px #FFFFF0 ;
+	background-color: rgba(31, 41, 55, 0.9);
+	width: 10.5rem;
+	height: 3rem;
+	display: flex;
+	justify-content: right;
+	color: rgb(224, 214, 200);
+}
