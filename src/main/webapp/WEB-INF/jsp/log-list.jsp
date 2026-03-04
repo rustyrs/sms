@@ -7,6 +7,35 @@
 
 <h2>ログ一覧</h2>
 
+<div id="filter">
+	<form action="log-list" method="get">
+		<strong>実行者IDで絞り込む</strong>
+		<input type="text" name="executor-id">
+		<input type="submit" value="検索">
+	</form>
+	
+	<form action="log-list" method="get">
+		<strong>処理メソッドで絞り込む</strong>
+		<select name="action-type">
+			<option value="POST">POST</option>
+			<option value="GET">GET</option>
+			<option value="UPDATE">UPDATE</option>
+			<option value="DELETE">DELETE</option>
+		</select>
+		<input type="submit" value="検索">
+	</form>
+	
+	<form action="log-list" method="get">
+		<strong>対象テーブルで絞り込む</strong>
+		<select name="target-table">
+			<option value="students">students</option>
+			<option value="managers">managers</option>
+			<option value="logs">logs</option>
+		</select>
+		<input type="submit" value="検索">
+	</form>
+</div>
+
 <table>
 	<thead>
 		<tr>

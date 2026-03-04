@@ -20,16 +20,37 @@ public class LogList extends HttpServlet {
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
 		
-		LogDAO dao = new LogDAO();
+		List<Log> logs = null;
+		
+		String executorId = request.getParameter("executor-id");
+		String actionType = request.getParameter("action-type");
+		String targetTable = request.getParameter("target-table");
 		
 		try {
 			String userId = Session.get("id", request, response);
 			LogDAO.create(new Log(userId, "GET", "logs"));
-			List<Log> logs = dao.getAll();
-			request.setAttribute("logs", logs);
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (Exception e) {}
+		
+		if (executorId != null) {
+			try {
+				logs = LogDAO.findByExecuterId(executorId);				
+			} catch (Exception e) {}
+		} else if (actionType != null) {
+			try {
+				logs = LogDAO.findByActionType(actionType);				
+			} catch (Exception e) {}
+		} else if (targetTable != null) {
+			try {
+				logs = LogDAO.findByTargetTable(targetTable);				
+			} catch (Exception e) {}
+		} else {
+			try {
+				logs = LogDAO.findAll();				
+			} catch (Exception e) {}
 		}
+		
+		request.setAttribute("logs", logs);
+		
 		
 		request.getRequestDispatcher("WEB-INF/jsp/log-list.jsp")
 			.forward(request, response);
