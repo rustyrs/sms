@@ -2,7 +2,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 
 <jsp:include page="/WEB-INF/jsp/common/header.jsp">
-    <jsp:param name="cssPath" value="/css/lmenu.css" />
+    <jsp:param name="cssPath" value="/css/menu.css" />
 </jsp:include>
 
 <h2>メニュー</h2>
