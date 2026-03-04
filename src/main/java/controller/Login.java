@@ -48,7 +48,7 @@ public class Login extends HttpServlet {
 				Manager m = managerDao.getDetail(id, password);
 					
 				session.setAttribute("id", m.getId() );
-				session.setAttribute("name", m.getName() );
+				session.setAttribute("userName", m.getName() );
 					
 				nextPage = "menu";
 			} else {

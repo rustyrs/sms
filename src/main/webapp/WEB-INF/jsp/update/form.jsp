@@ -1,25 +1,33 @@
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../common/header.jsp" %>
 
-<h2>学生更新</h2>
+<jsp:include page="/WEB-INF/jsp/common/header.jsp">
+    <jsp:param name="cssPath" value="/css/update.css" />
+</jsp:include>
 
-<form action="update" method="post">
-	更新する生徒のID:
-	<input type="text" name="target" class="input"><br><br>
 
-	更新後の<br>
-	学生番号:<br>
-	 <input type="text" name="id" class="input"><br>
-	学生名:<br>
-	 <input type="text" name="name" class="input"><br>
-	コース番号: 
-	<select name="course">
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-	</select><br><br>
-	
-	<input type="submit" value="送信" class="button">
+<form action="update-input" method="post" id="update-form">
+	<div id="before" class="update-card">
+		<h3>更新前</h3>
+		<strong>生徒番号</strong><br>
+		${targetNumber}<br>
+		<strong>名前</strong><br>
+		${targetName}<br>
+		<strong>コース番号</strong><br>
+		${targetCourse}
+	</div>
+
+	<div id="after"  class="update-card">
+		<h3>更新後</h3>
+		<strong>生徒番号</strong><br>
+		<input type="text" value="${targetNumber}" name="number" class="input" disabled><br>
+		<strong>名前</strong><br>
+		<input type="text" name="name" class="input"><br>
+		<strong>コース番号</strong><br>
+		<input type="text" name="course" class="input"><br>
+		
+		<input type="submit" value="送信" class="button">
+	</div>
 </form>
 
 <%@include file="../common/footer.jsp" %>

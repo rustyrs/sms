@@ -7,7 +7,7 @@ header {
 	color: #FFFFF0 !important;
 }
 
-#name {
+#userName {
 	display: flex;
 	align-items: center;
 	justify-content: center;

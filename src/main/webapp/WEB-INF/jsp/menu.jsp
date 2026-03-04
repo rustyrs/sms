@@ -29,7 +29,7 @@
 	</li>
 	
 	<li class="function">
-        <a href="update">学生更新</a>
+        <a href="update-select">学生更新</a>
         <p>IDで指定した学生を、更新後の詳細を入力することで更新します。</p>
 	</li>
 </ul>

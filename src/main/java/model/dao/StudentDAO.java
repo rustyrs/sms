@@ -34,6 +34,24 @@ public class StudentDAO {
 		return list;	
 	}
 	
+	// 存在を確認するだけ
+	public boolean exsists(int number) throws Exception {
+		Connection con = DAO.getConnection();
+		PreparedStatement statement = con.prepareStatement(
+				"SELECT 1 FROM students WHERE student_id = ?"
+		);
+		statement.setInt(1, number);
+		ResultSet rs = statement.executeQuery();
+		
+		boolean isExsits = rs.next();
+		
+		rs.close();
+		statement.close();
+		con.close();
+		
+		return isExsits;
+	}
+	
 	// 名前で絞り込み
 	public List<Student> findByName(String name) throws Exception {
 		
@@ -112,6 +130,33 @@ public List<Student> findByNameFuzzy(String name) throws Exception {
 		return name;
 	}
 	
+    // IDで詳細を返す
+public Student getDetail(int id) throws Exception {
+		
+		Connection con = DAO.getConnection();
+		
+		PreparedStatement st=con.prepareStatement(
+				"SELECT * FROM students WHERE student_id = ?"
+		);
+		st.setInt(1, id);
+		ResultSet rs=st.executeQuery();
+		
+		Student s = new Student();
+		
+	    if (rs.next()) {
+			s.setId(rs.getInt("student_id"));
+			s.setName(rs.getString("student_name"));
+			s.setCourse(rs.getInt("course_id"));
+	    }
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		return s;
+	}
+	
+    
 	// 学生追加
 	public int create(Student s) throws Exception {
 		Connection con = DAO.getConnection();

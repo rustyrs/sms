@@ -1,0 +1,31 @@
+html, body {
+	overflow: hidden;
+}
+
+#update-form {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.update-card {
+	padding: 3rem;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	font-size: 150%;
+}
+
+#before {
+	background-color: #F1F5F9;
+	color: #475569;
+}
+
+#after {
+	background-color: #FFFFFF;
+	color: #1E293B;
+}
+
+#exists {
+	color: #F43F5E;
+}

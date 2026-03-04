@@ -10,3 +10,13 @@
   - `"id", Student.getNumber()`
   - `"id", Student.getName()`
   - `"id", Student.getComment()`
+  
+  
+## MEMO
+1. SelectForm.java GET
+2. /update-select POST
+3. UpdateProcess.java
+4. 
+  
+  /update-form
+  /result

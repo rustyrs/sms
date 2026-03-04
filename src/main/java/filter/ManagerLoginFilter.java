@@ -37,8 +37,8 @@ public class ManagerLoginFilter implements Filter {
 			httpResponse.sendRedirect("/sms/login");
 			return;
 		} else {
-			String name = (String) session.getAttribute("name");
-			request.setAttribute("name", name);	
+			String name = (String) session.getAttribute("userName");
+			request.setAttribute("userName", name);	
 		}
 		
 		chain.doFilter(request, response);
