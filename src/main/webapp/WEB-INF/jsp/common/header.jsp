@@ -27,7 +27,7 @@
 <a href="register" class="header-link" ${currentPath == '/WEB-INF/jsp/register/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/register/result.jsp' ? 'id="current"' : ''}>学生追加</a>
 <a href="delete" class="header-link" ${currentPath == '/WEB-INF/jsp/delete/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/delete/result.jsp' ? 'id="current"' : ''}>学生削除</a>
 <a href="update-select" class="header-link" ${currentPath == '/WEB-INF/jsp/update/form.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/update/select.jsp' ? 'id="current"' : ''} ${currentPath == '/WEB-INF/jsp/update/result.jsp' ? 'id="current"' : ''}>学生更新</a>
-<a href="others" class="header-link" ${currentPath == '/WEB-INF/jsp/others.jsp' ? 'id="current"' : ''}>その他</a>
+<a href="others" class="header-link" ${currentPath == '/WEB-INF/jsp/others.jsp' ? 'id="current"' : ''}>特権操作</a>
 </nav>
 </header>
 

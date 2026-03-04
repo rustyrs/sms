@@ -32,6 +32,11 @@
         <a href="update-select">学生更新</a>
         <p>IDで指定した学生を、更新後の詳細を入力することで更新します。</p>
 	</li>
+	
+	<li class="function">
+        <a href="others">特権操作</a>
+        <p>危険な操作ができますが、上位の権限が必要です。</p>
+	</li>
 </ul>
 
 </body>

@@ -3,13 +3,24 @@
 }
 
 #middle {
-	background-color: rgba(31, 41, 95, 0.1);
+	background-color: rgba(244, 63, 94, 0.05)
 }
 
 #high {
-	background-color: rgba(31, 41, 95, 0.2);
+	background-color: rgba(244, 63, 94, 0.1);
 }
 
 #supreme {
-	background-color: rgba(31, 41, 95, 0.3);
+	background-color: rgba(244, 63, 94, 0.15);
+}
+
+.function {
+	font-size: 120% !important;
+	color: black !important;
+	border-bottom: solid 1px black !important;
+}
+
+#functions {
+	margin-bottom: 3rem;
+	padding-bottom: 3rem;
 }
