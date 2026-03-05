@@ -35,7 +35,7 @@ public class StudentDAO {
 	}
 	
 	// 存在を確認するだけ
-	public boolean exsists(int number) throws Exception {
+	public static boolean exists(int number) throws Exception {
 		Connection con = DAO.getConnection();
 		PreparedStatement statement = con.prepareStatement(
 				"SELECT 1 FROM students WHERE student_id = ?"

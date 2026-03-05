@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.bean.Log;
 import model.dao.LogDAO;
 import model.dao.StudentDAO;
@@ -30,6 +31,17 @@ public class DeleteStudent extends HttpServlet {
 		
 		// Form取得&初期化
 		int id = Integer.parseInt(request.getParameter("id"));
+		HttpSession session = request.getSession();
+		boolean isExsits = true;
+		try {
+			isExsits = StudentDAO.exists(id);
+			session.setAttribute("deleteExists", isExsits);
+		} catch (Exception e) {}
+		
+		if (!isExsits) {	
+			response.sendRedirect("delete");
+			return;
+		}
 		
 		StudentDAO dao = new StudentDAO();
 		 

@@ -24,7 +24,7 @@ public class SaveTarget extends HttpServlet {
 		boolean isExists = false;
 		HttpSession session = request.getSession();
 		try {
-			isExists = dao.exsists(targetId);
+			isExists = StudentDAO.exists(targetId);
 		} catch (Exception e) {}
 		
 		Student s;
