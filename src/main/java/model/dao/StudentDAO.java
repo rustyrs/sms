@@ -105,6 +105,33 @@ public List<Student> findByNameFuzzy(String name) throws Exception {
 		
 		return list;
 	}
+
+// コースで絞り込み
+public List<Student> findByCourse(String courseId) throws Exception {
+	
+	List<Student> list = new ArrayList<>();
+	Connection con = DAO.getConnection();
+	
+	PreparedStatement st=con.prepareStatement(
+			"SELECT * FROM students WHERE course_id = ?"
+	);
+	st.setString(1, courseId);
+	ResultSet rs=st.executeQuery();
+	
+	while (rs.next()) {
+		Student s = new Student();
+		s.setId(rs.getInt("student_id"));
+		s.setName(rs.getString("student_name"));
+		s.setCourse(rs.getInt("course_id"));
+		list.add(s);
+	}
+	
+	rs.close();
+	st.close();
+	con.close();
+	
+	return list;
+}
 	
 	// IDで名前を返す
     public String findById(int id) throws Exception {

@@ -22,16 +22,29 @@ public class StudentList extends HttpServlet {
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
 		
+		String courseId = request.getParameter("course-id");
+		
 		StudentDAO dao = new StudentDAO();
+		List<Student> students;
 		
 		try {
 			String userId = Session.get("id", request, response);
 			LogDAO.create(new Log(userId, "GET", "students"));
-			List<Student> students = dao.getAll();
-			request.setAttribute("students", students);
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (Exception e) {}
+		
+		if (courseId != null) {
+			try {
+				students = dao.findByCourse(courseId);
+				request.setAttribute("students", students);
+			} catch (Exception e) {}
+		} else {
+			try {
+				students = dao.getAll();
+				request.setAttribute("students", students);
+			} catch (Exception e) {}
 		}
+		
+		
 		
 		request.getRequestDispatcher("WEB-INF/jsp/student-list.jsp")
 			.forward(request, response);

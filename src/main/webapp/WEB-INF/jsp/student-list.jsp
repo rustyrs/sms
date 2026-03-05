@@ -4,6 +4,11 @@
 
 <h2>学生一覧</h2>
 
+<form action="student-list" method="get">
+	<input type="text" name="course-id">
+	<input type="submit" value="コース番号で絞り込む">
+</form>
+
 <table border="1">
 	<thead>
 		<tr>
