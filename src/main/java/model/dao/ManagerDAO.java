@@ -3,6 +3,8 @@ package model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.bean.Manager;
 
@@ -51,5 +53,28 @@ public class ManagerDAO {
 		con.close();
 		
 		return m;
+	}
+	// 全取得
+	public List<Manager> findAll() throws Exception {		
+		List<Manager> list = new ArrayList<>();
+		Connection con = DAO.getConnection();
+		
+		PreparedStatement st = con.prepareStatement(
+				"SELECT * FROM managers"
+		);
+		ResultSet rs = st.executeQuery();
+		
+		while (rs.next()) {
+			Manager m = new Manager();
+			m.setId(rs.getString("id"));
+			m.setName(rs.getString("name"));
+			list.add(m);
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		return list;	
 	}
 }

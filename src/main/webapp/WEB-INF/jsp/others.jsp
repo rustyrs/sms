@@ -19,8 +19,8 @@
 	</div>
 	
 	<div class="card">
-		<a class="function" href="#">コース一覧</a>
-		<p>コースの一覧を見ることができます。</p>
+		<a class="function" href="manager-list">教員一覧</a>
+		<p>教員の一覧を見ることができます。</p>
 	</div>
 </div>
 
