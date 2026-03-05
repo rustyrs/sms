@@ -22,9 +22,9 @@
 		<strong>生徒番号</strong><br>
 		<input type="text" value="${targetNumber}" name="number" class="input" disabled><br>
 		<strong>名前</strong><br>
-		<input type="text" name="name" class="input"><br>
+		<input type="text" name="name" class="input" required><br>
 		<strong>コース番号</strong><br>
-		<input type="text" name="course" class="input"><br>
+		<input type="text" name="course" class="input" required><br>
 		
 		<input type="submit" value="送信" class="button">
 	</div>

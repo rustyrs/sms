@@ -10,9 +10,9 @@
 <div id="login-form">
 	<form action="login" method="post" id="login">
 		ID<br>
-		<input type="text" name="id"><br><br>
+		<input type="text" name="id" required><br><br>
 		パスワード<br>
-		<input type="password" name="password"><br>
+		<input type="password" name="password" required><br>
 		<br>
 		<input type="submit" value="送信" class="button"><br>
 		<c:if test="${managerUnsuccess}">ログインに失敗しました</c:if>

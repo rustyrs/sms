@@ -6,7 +6,7 @@
 <form action="search" method="post">
 	
 	お名前:<br><br>
-	<input type="text" name="name" class="input">
+	<input type="text" name="name" class="input" required>
 	
 	<br><br>
 	
