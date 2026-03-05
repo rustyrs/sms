@@ -5,7 +5,7 @@
     <jsp:param name="cssPath" value="/css/others.css" />
 </jsp:include>
 
-<h2>限定操作</h2>
+<h2>特権操作</h2>
 
 <div id="functions">
 <div id="middle" class="role">

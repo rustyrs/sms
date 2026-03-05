@@ -8,34 +8,38 @@
 <h2>メニュー</h2>
 
 <ul id="function-list">
-	<li class="function">
+	<li class="function" onclick="location.href='student-list'">
         <a href="student-list">学生一覧</a>
         <p>学生の一覧を表示します。特に操作はできません。</p>
 	</li>
 	
-	<li class="function">
+	<li class="function" onclick="location.href='search'">
         <a href="search">学生検索</a>
         <p>学生を名前で検索できます。</p>
 	</li>
 	
-	<li class="function">
+	<li class="function" onclick="location.href='register'">
         <a href="register">学生追加</a>
         <p>詳細を入力することで学生を追加できます。</p>
 	</li>
 	
-	<li class="function">
+	<li class="function" onclick="location.href='delete'">
         <a href="delete">学生削除</a>
         <p>学生をIDで指定し、削除します。</p>
 	</li>
 	
-	<li class="function">
+	<li class="function" onclick="location.href='update-select'">
         <a href="update-select">学生更新</a>
         <p>IDで指定した学生を、更新後の詳細を入力することで更新します。</p>
 	</li>
 	
-	<li class="function">
+	<li class="function" onclick="location.href='others'">
         <a href="others">特権操作</a>
         <p>危険な操作ができますが、上位の権限が必要です。</p>
+	</li>
+	
+	<li class="function">
+        <a href="others">ログアウト</a>
 	</li>
 </ul>
 
