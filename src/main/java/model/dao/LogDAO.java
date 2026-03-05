@@ -9,6 +9,18 @@ import java.util.List;
 import model.bean.Log;
 
 public class LogDAO {
+	// 全削除
+		public static void reset() throws Exception {
+	Connection con = DAO.getConnection();
+			
+			PreparedStatement st = con.prepareStatement(
+					"DELETE FROM logs"
+			);
+			st.executeQuery();
+			
+			st.close();
+			con.close();
+		}
 	// 全取得
 		public static List<Log> findAll() throws Exception {
 			

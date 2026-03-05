@@ -45,20 +45,11 @@
 	
 	<hr>
 	
-	<div class="card">
-		<a class="function" href="logs">学生データリセット</a>
-		<p>学生のデータベースを削除し、作り直します。</p>
+	<div class="card" onclick="location.href='reset-menu'">
+		<a class="function" href="reset-menu">データリセット</a>
+		<p>学生や教員、ログのデータベースを削除し、作り直します。</p>
 	</div>
 	
-	<div class="card">
-		<a class="function" href="#">教員データリセット</a>
-		<p>教員のデータベースを削除し、作り直します。これを行うと学生のデータベースもリセットされます。</p>
-	</div>
-	
-	<div class="card">
-		<a class="function" href="#">ログデータリセット</a>
-		<p>ログのデータベースを削除し、作り直します。</p>
-	</div>
 </div>
 </div>
 

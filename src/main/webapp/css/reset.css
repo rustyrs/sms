@@ -1,0 +1,41 @@
+#database-list {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.database {
+	padding: 3rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	width: 17vw;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	gap: 0.5rem;
+	transition: all 0.3s ease-in-out;
+	border-radius: 10%;
+	cursor: pointer
+}
+
+#manager {
+	background-color: rgba(153, 221, 204, 0.7);
+}
+
+#student {
+	background-color: rgba(255, 226, 226, 0.7);
+}
+
+#log {
+	background-color: rgba(186, 215, 223, 0.7);	
+}
+
+.database:hover {
+	scale: 110%;
+}

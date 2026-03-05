@@ -9,6 +9,19 @@ import java.util.List;
 import model.bean.Student;
 
 public class StudentDAO {
+	// 全削除
+	public static void reset() throws Exception {
+Connection con = DAO.getConnection();
+		
+		PreparedStatement st = con.prepareStatement(
+				"DELETE FROM students"
+		);
+		st.executeQuery();
+		
+		st.close();
+		con.close();
+	}
+	
 	// 全取得
 	public List<Student> getAll() throws Exception {		
 		List<Student> list = new ArrayList<>();

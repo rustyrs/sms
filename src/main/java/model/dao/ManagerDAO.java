@@ -9,6 +9,20 @@ import java.util.List;
 import model.bean.Manager;
 
 public class ManagerDAO {
+	
+	// 全削除
+		public static void reset() throws Exception {
+	Connection con = DAO.getConnection();
+			
+			PreparedStatement st = con.prepareStatement(
+					"DELETE FROM managers"
+			);
+			st.executeQuery();
+			
+			st.close();
+			con.close();
+		}
+	
 	// ログイン
 	public boolean login(String id, String password) throws Exception {
 		Connection con = DAO.getConnection();
