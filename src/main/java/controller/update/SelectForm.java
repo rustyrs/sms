@@ -16,6 +16,12 @@ public class SelectForm extends HttpServlet {
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
+		
+		String target = request.getParameter("target");
+		if (target != null) {
+			request.setAttribute("target", target);
+		}
+		
 		request.getRequestDispatcher("WEB-INF/jsp/update/select.jsp")
 		.forward(request, response);
 	}

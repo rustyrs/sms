@@ -4,10 +4,15 @@
 
 <h2>学生一覧</h2>
 
+<br>
+
 <form action="student-list" method="get">
 	<input type="text" name="course-id">
 	<input type="submit" value="コース番号で絞り込む">
 </form>
+
+<br>
+<p>クリックで更新画面に飛びます</p>
 
 <table border="1">
 	<thead>
@@ -19,7 +24,7 @@
 	</thead>
 	
 	<c:forEach var="s" items="${students}">
-		<tbody>
+		<tbody onclick="location.href='update-select?target='+${s.id}">
 			<tr>
 				<th>${s.id}</th>
 				<td>${s.name}</td>

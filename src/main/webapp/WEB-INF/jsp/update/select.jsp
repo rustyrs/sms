@@ -12,7 +12,7 @@
 </c:if>
 <form action="update-save-target" method="get">
 	更新する生徒の生徒番号を入力してください。<br>
-	<input type="number" name="target" class="input" required><br><br>
+	<input type="number" name="target" class="input" required value="${target}"><br><br>
 	<input type="submit" value="送信" class="button">
 </form>
 
