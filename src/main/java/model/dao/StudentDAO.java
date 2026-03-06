@@ -196,7 +196,6 @@ public Student getDetail(int id) throws Exception {
 		return s;
 	}
 	
-    
 	// 学生追加
 	public int create(Student s) throws Exception {
 		Connection con = DAO.getConnection();

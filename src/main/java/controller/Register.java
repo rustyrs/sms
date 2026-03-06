@@ -35,6 +35,24 @@ public class Register extends HttpServlet {
 		Student s = new Student(id, name, course);
 		
 		StudentDAO dao = new StudentDAO();
+		boolean isExists = false;
+		
+		request.setAttribute("registNumber", id);
+		
+		try {
+			isExists = StudentDAO.exists(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		if (isExists) {
+			request.setAttribute("isExistsRegister", true);
+			request.getRequestDispatcher("WEB-INF/jsp/register/result.jsp")
+			.forward(request, response);
+			return;
+		} else {
+			request.setAttribute("isExistsRegister", false);
+		}
 		 
 		int lines = 0; // 成功失敗判定用
 		
