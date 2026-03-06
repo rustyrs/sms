@@ -2,7 +2,7 @@ package model.bean;
 
 public class Log implements java.io.Serializable {
 	
-	// コンストラクタ
+	// --- コンストラクタ ---
 	public Log() {}
 	public Log(
 			String userId, String actionType, String targetTable
@@ -12,14 +12,14 @@ public class Log implements java.io.Serializable {
 		this.targetTable = targetTable;
 	}
 	
-	// データ
+	// --- フィールド ---
 	private int logId;
 	private String userId;
 	private String actionType;
 	private String targetTable;
 	private String actionedAt;
 
-	// ゲッター
+	// --- ゲッター ---
 	public int getLogId() {
 		return logId;
 	}
@@ -40,7 +40,7 @@ public class Log implements java.io.Serializable {
 		return actionedAt;
 	}
 	
-	// セッター	
+	// --- セッター ---	
 	public void setLogId(int logId) {
 		this.logId = logId;
 	}

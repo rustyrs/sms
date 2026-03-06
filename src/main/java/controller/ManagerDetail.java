@@ -1,3 +1,8 @@
+//
+//
+// 未使用
+//
+//
 package controller;
 
 import java.io.IOException;
@@ -10,9 +15,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/manager/*")
 public class ManagerDetail extends HttpServlet {
-    protected void doGet(
-    		HttpServletRequest request, HttpServletResponse response
-    ) throws ServletException, IOException {
+  protected void doGet(
+    HttpServletRequest request, HttpServletResponse response
+  ) throws ServletException, IOException {
  
         String pathInfo = request.getPathInfo(); 
         

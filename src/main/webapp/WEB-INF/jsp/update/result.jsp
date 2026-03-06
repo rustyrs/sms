@@ -18,7 +18,7 @@
 	<c:when test="${!result}">
 	<div id="failure">
 	<strong>
-	更新に失敗しました。学生一覧を確認して、その学生番号が存在するかチェックしてください。
+	更新に失敗しました。学生一覧を確認して、その学生IDが存在するかチェックしてください。
 	</strong>
 	<a href="student-list">学生一覧</a>
 	</div>

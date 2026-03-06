@@ -16,6 +16,8 @@ import session.Session;
 
 @WebServlet(urlPatterns={"/log-list"})
 public class LogList extends HttpServlet {
+
+	// フォワード
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
@@ -26,31 +28,32 @@ public class LogList extends HttpServlet {
 		String actionType = request.getParameter("action-type");
 		String targetTable = request.getParameter("target-table");
 		
+		// ログ追加
 		try {
 			String userId = Session.get("id", request, response);
 			LogDAO.create(new Log(userId, "GET", "logs"));
 		} catch (Exception e) {}
 		
-		if (executorId != null) {
+		// 絞り込み
+		if (executorId != null) { // 実行者で
 			try {
 				logs = LogDAO.findByExecuterId(executorId);				
 			} catch (Exception e) {}
-		} else if (actionType != null) {
+		} else if (actionType != null) { // メソッドで
 			try {
 				logs = LogDAO.findByActionType(actionType);				
 			} catch (Exception e) {}
-		} else if (targetTable != null) {
+		} else if (targetTable != null) { // 対象テーブルで
 			try {
 				logs = LogDAO.findByTargetTable(targetTable);				
 			} catch (Exception e) {}
-		} else {
+		} else { // 何もないなら全て
 			try {
 				logs = LogDAO.findAll();				
 			} catch (Exception e) {}
 		}
 		
 		request.setAttribute("logs", logs);
-		
 		
 		request.getRequestDispatcher("WEB-INF/jsp/log-list.jsp")
 			.forward(request, response);

@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-// メニュークラス
+// ログアウトクラス
 
 @WebServlet(urlPatterns={"/logout"})
 public class Logout extends HttpServlet {
@@ -17,7 +17,7 @@ public class Logout extends HttpServlet {
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		session.invalidate();
+		session.invalidate(); // セッションを全て削除
 		return;
 	}
 }

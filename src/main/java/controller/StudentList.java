@@ -18,6 +18,8 @@ import session.Session;
 
 @WebServlet(urlPatterns={"/student-list"})
 public class StudentList extends HttpServlet {
+
+	// フォワード
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
@@ -27,11 +29,13 @@ public class StudentList extends HttpServlet {
 		StudentDAO dao = new StudentDAO();
 		List<Student> students;
 		
+		// ログ追加
 		try {
 			String userId = Session.get("id", request, response);
 			LogDAO.create(new Log(userId, "GET", "students"));
 		} catch (Exception e) {}
 		
+		// 絞り込み
 		if (courseId != null) {
 			try {
 				students = dao.findByCourse(courseId);
@@ -43,8 +47,6 @@ public class StudentList extends HttpServlet {
 				request.setAttribute("students", students);
 			} catch (Exception e) {}
 		}
-		
-		
 		
 		request.getRequestDispatcher("WEB-INF/jsp/student-list.jsp")
 			.forward(request, response);

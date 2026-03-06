@@ -12,7 +12,7 @@
 <table border="1">
 	<thead>
 		<tr>
-			<th>学生番号</th>
+			<th>学生ID</th>
 			<th>学生名</th>
 			<th>コース番号</th>			
 		</tr> 

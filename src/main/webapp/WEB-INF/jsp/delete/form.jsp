@@ -6,12 +6,12 @@
 
 <c:if test="${!empty deleteExists}">
 <c:if test="${!deleteExists}">
-<strong id="exists">その学生番号は存在しません</strong>
+<strong id="exists">その学生IDは存在しません</strong>
 </c:if>
 </c:if>
 
 <form action="delete" method="post">
-	削除する生徒の学生番号:<br>
+	削除する生徒の学生ID:<br>
 	<input type="text" name="id" class="input" required>
 	<br><br>
 	<input type="submit" class="button"><br>

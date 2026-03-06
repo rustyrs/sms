@@ -11,7 +11,7 @@ import model.bean.Student;
 public class StudentDAO {
 	// 全削除
 	public static void reset() throws Exception {
-Connection con = DAO.getConnection();
+		Connection con = DAO.getConnection();
 		
 		PreparedStatement st = con.prepareStatement(
 				"DELETE FROM students"
@@ -93,7 +93,7 @@ Connection con = DAO.getConnection();
 	}
 	
 	// 上のあいまい版
-public List<Student> findByNameFuzzy(String name) throws Exception {
+	public List<Student> findByNameFuzzy(String name) throws Exception {
 		
 		List<Student> list = new ArrayList<>();
 		Connection con = DAO.getConnection();
@@ -119,35 +119,35 @@ public List<Student> findByNameFuzzy(String name) throws Exception {
 		return list;
 	}
 
-// コースで絞り込み
-public List<Student> findByCourse(String courseId) throws Exception {
-	
-	List<Student> list = new ArrayList<>();
-	Connection con = DAO.getConnection();
-	
-	PreparedStatement st=con.prepareStatement(
-			"SELECT * FROM students WHERE course_id = ?"
-	);
-	st.setString(1, courseId);
-	ResultSet rs=st.executeQuery();
-	
-	while (rs.next()) {
-		Student s = new Student();
-		s.setId(rs.getInt("student_id"));
-		s.setName(rs.getString("student_name"));
-		s.setCourse(rs.getInt("course_id"));
-		list.add(s);
+	// コースで絞り込み
+	public List<Student> findByCourse(String courseId) throws Exception {
+		
+		List<Student> list = new ArrayList<>();
+		Connection con = DAO.getConnection();
+		
+		PreparedStatement st=con.prepareStatement(
+				"SELECT * FROM students WHERE course_id = ?"
+		);
+		st.setString(1, courseId);
+		ResultSet rs=st.executeQuery();
+		
+		while (rs.next()) {
+			Student s = new Student();
+			s.setId(rs.getInt("student_id"));
+			s.setName(rs.getString("student_name"));
+			s.setCourse(rs.getInt("course_id"));
+			list.add(s);
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+		return list;
 	}
 	
-	rs.close();
-	st.close();
-	con.close();
-	
-	return list;
-}
-	
 	// IDで名前を返す
-    public String findById(int id) throws Exception {
+  public String findById(int id) throws Exception {
 		
 		Connection con = DAO.getConnection();
 		
@@ -159,9 +159,9 @@ public List<Student> findByCourse(String courseId) throws Exception {
 		
 		String name = null;
 		
-	    if (rs.next()) {
+		if (rs.next()) {
 			name = rs.getString("student_name");
-	    }
+		}
 		
 		rs.close();
 		st.close();
@@ -170,9 +170,8 @@ public List<Student> findByCourse(String courseId) throws Exception {
 		return name;
 	}
 	
-    // IDで詳細を返す
-public Student getDetail(int id) throws Exception {
-		
+  // IDで詳細を返す
+	public Student getDetail(int id) throws Exception {		
 		Connection con = DAO.getConnection();
 		
 		PreparedStatement st=con.prepareStatement(
@@ -183,11 +182,11 @@ public Student getDetail(int id) throws Exception {
 		
 		Student s = new Student();
 		
-	    if (rs.next()) {
-			s.setId(rs.getInt("student_id"));
-			s.setName(rs.getString("student_name"));
-			s.setCourse(rs.getInt("course_id"));
-	    }
+		if (rs.next()) {
+		s.setId(rs.getInt("student_id"));
+		s.setName(rs.getString("student_name"));
+		s.setCourse(rs.getInt("course_id"));
+		}
 		
 		rs.close();
 		st.close();
@@ -236,7 +235,6 @@ public Student getDetail(int id) throws Exception {
 	public int delete(int id) throws Exception {
 		
 		Connection con = DAO.getConnection();
-		
 		PreparedStatement st = con.prepareStatement(
 				"DELETE FROM students WHERE student_id = ?"
 		);

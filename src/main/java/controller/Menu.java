@@ -12,6 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns={"/menu"})
 public class Menu extends HttpServlet {
+
+	// フォワード
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {

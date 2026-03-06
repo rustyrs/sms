@@ -6,7 +6,7 @@
 <p>追加する学生の情報を入力してください。</p>
 
 <form action="register" method="post">
-	学生番号: <br><input type="number" name="id" class="input" required><br>
+	学生ID: <br><input type="number" name="id" class="input" required><br>
 	学生名: <br><input type="text" name="name" class="input" required><br>
 	コース番号: 
 	<select name="course" required>

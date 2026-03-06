@@ -11,18 +11,22 @@ import jakarta.servlet.http.HttpSession;
 import model.bean.Manager;
 import model.dao.ManagerDAO;
 
-
 @WebServlet(urlPatterns={"/login"})
 public class Login extends HttpServlet {
+
+	// フォワード
 	public void doGet(
 			HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
+		
+		// セッション初期化
 		request.setAttribute("studentUnsuccess", false);
 		request.setAttribute("managerUnsuccess", false);
 		request.getRequestDispatcher("WEB-INF/jsp/login.jsp")
 		.forward(request, response);
 	}
 	
+	// ログイン処理
 	public void doPost (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
@@ -39,8 +43,10 @@ public class Login extends HttpServlet {
 		boolean managerUnsuccess = false;
 		
 		try {
+			// IDとパスワードを検証する
 			boolean isExists = managerDao.login(id, password);
 			if (isExists) {
+				// 存在していればログイン状態のセッションをTrueにして名前等をセッションに保存
 				managerUnsuccess = false;
 				session.setAttribute("managerIsLogin", true);
 				session.setAttribute("mode", "manager");
@@ -58,6 +64,7 @@ public class Login extends HttpServlet {
 			request.setAttribute("error", e);
 		}
 		
+		// jspに結果を表示するため
 		request.setAttribute("studentUnsuccess", studentUnsuccess);
 		request.setAttribute("managerUnsuccess", managerUnsuccess);
 		

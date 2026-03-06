@@ -2,7 +2,7 @@ package model.bean;
 
 public class Student implements java.io.Serializable {
 	
-	// コンストラクタ
+	// --- コンストラクタ ---
 	public Student() {}
 	public Student(int id, String name, int course) {
 		this.id = id;
@@ -10,10 +10,12 @@ public class Student implements java.io.Serializable {
 		this.course = course;
 	}
 	
+	// --- フィールド ---
 	private int    id;
 	private String name;
 	private int    course;
 
+	// --- ゲッター ---
 	public int getId() {
 		return id;
 	}
@@ -24,6 +26,7 @@ public class Student implements java.io.Serializable {
 		return course;
 	}
 
+	// --- セッター ---
 	public void setId(int id) {
 		this.id=id;
 	}

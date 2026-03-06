@@ -18,6 +18,8 @@ import session.Session;
 
 @WebServlet(urlPatterns={"/search"})
 public class Search extends HttpServlet {
+
+	// フォワード
 	public void doGet(
 			HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
@@ -25,6 +27,7 @@ public class Search extends HttpServlet {
 		.forward(request, response);
 	}
 	
+	// 検索
 	public void doPost (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
@@ -37,8 +40,11 @@ public class Search extends HttpServlet {
 		List<Student> students;
 		
 		try {
+			// ログ追加
 			String userId = Session.get("id", request, response);
 			LogDAO.create(new Log(userId, "GET", "students"));
+			
+			// あいまい検索判定
 			if (fuzzy == null) {
 				students = dao.findByName(name);	
 			} else {

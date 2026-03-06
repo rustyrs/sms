@@ -2,7 +2,7 @@ package model.bean;
 
 public class Manager implements java.io.Serializable {
 	
-	// コンストラクタ
+	// --- コンストラクタ ---
 	public Manager() {}
 	public Manager(String id, String name, String password) {
 		this.id = id;
@@ -10,10 +10,12 @@ public class Manager implements java.io.Serializable {
 		this.password = password;
 	}
 	
+	// --- フィールド ---
 	private String id;
 	private String name;
 	private String password;
 
+	// --- ゲッター ---
 	public String getId() {
 		return id;
 	}
@@ -24,6 +26,7 @@ public class Manager implements java.io.Serializable {
 		return password;
 	}
 
+	// --- セッター ---
 	public void setId(String id) {
 		this.id=id;
 	}

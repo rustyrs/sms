@@ -14,6 +14,8 @@ import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
+// 現在時刻取得フィルター
+
 @WebFilter(urlPatterns = {"/*"})
 public class Time implements Filter {
 	public void doFilter(
@@ -24,13 +26,17 @@ public class Time implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpSession session = httpRequest.getSession();
 		
+		// 現在時刻取得
 		LocalDateTime nowDate = LocalDateTime.now();
+		
+		// フォーマットを整える
 		DateTimeFormatter date = DateTimeFormatter.ofPattern("yyyy年MM月dd日E曜日");
 		DateTimeFormatter time = DateTimeFormatter.ofPattern("HH:mm");
 		
 		String fDate = date.format(nowDate);
 		String fTime = time.format(nowDate);	
 
+		// セッションに入れる
 		session.setAttribute("date", fDate);
 		session.setAttribute("time", fTime);
 		

@@ -11,17 +11,17 @@ import model.bean.Manager;
 public class ManagerDAO {
 	
 	// 全削除
-		public static void reset() throws Exception {
-	Connection con = DAO.getConnection();
+	public static void reset() throws Exception {
+		Connection con = DAO.getConnection();
 			
-			PreparedStatement st = con.prepareStatement(
-					"DELETE FROM managers"
-			);
-			st.executeQuery();
-			
-			st.close();
-			con.close();
-		}
+		PreparedStatement st = con.prepareStatement(
+				"DELETE FROM managers"
+		);
+		st.executeQuery();
+		
+		st.close();
+		con.close();
+	}
 	
 	// ログイン
 	public boolean login(String id, String password) throws Exception {
@@ -53,7 +53,6 @@ public class ManagerDAO {
 		st.setString(1, id);
 		st.setString(2, password);
 		ResultSet rs=st.executeQuery();
-		
 
 		Manager m = new Manager();
 		
@@ -68,6 +67,7 @@ public class ManagerDAO {
 		
 		return m;
 	}
+	
 	// 全取得
 	public List<Manager> findAll() throws Exception {		
 		List<Manager> list = new ArrayList<>();

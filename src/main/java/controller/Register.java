@@ -18,12 +18,16 @@ import session.Session;
 
 @WebServlet(urlPatterns={"/register"})
 public class Register extends HttpServlet {
+
+	// フォワード
 	public void doGet(
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/jsp/register/form.jsp")
 		.forward(request, response);
 	}
+
+	// 登録処理
 	public void doPost (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
@@ -39,6 +43,7 @@ public class Register extends HttpServlet {
 		
 		request.setAttribute("registNumber", id);
 		
+		// 重複確認のため
 		try {
 			isExists = StudentDAO.exists(id);
 		} catch (Exception e) {
@@ -46,6 +51,7 @@ public class Register extends HttpServlet {
 		}
 		
 		if (isExists) {
+			// 重複していれば登録画面へ戻る
 			request.setAttribute("isExistsRegister", true);
 			request.getRequestDispatcher("WEB-INF/jsp/register/result.jsp")
 			.forward(request, response);
@@ -57,8 +63,11 @@ public class Register extends HttpServlet {
 		int lines = 0; // 成功失敗判定用
 		
 		try {
+			// ログ追加
 			String userId = Session.get("id", request, response);
 			LogDAO.create(new Log(userId, "POST", "students"));
+			
+			// 登録処理
 			lines = dao.create(s);			
 		} catch (Exception e) {
 			e.printStackTrace();

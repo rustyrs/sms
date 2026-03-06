@@ -5,6 +5,8 @@ import java.sql.Connection;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+// コネクト処理
+
 public class DAO {
 	static DataSource ds;
 

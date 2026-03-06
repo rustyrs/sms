@@ -25,8 +25,11 @@ public class ManagerList extends HttpServlet {
 		ManagerDAO dao = new ManagerDAO();
 		
 		try {
+			// ログ追加
 			String userId = Session.get("id", request, response);
 			LogDAO.create(new Log(userId, "GET", "managers"));
+			
+			// ログ取得
 			List<Manager> managers = dao.findAll();
 			request.setAttribute("managers", managers);
 		} catch (Exception e) {
