@@ -38,10 +38,20 @@
         <p>危険な操作ができますが、上位の権限が必要です。</p>
 	</li>
 	
-	<li class="function">
+	<li class="function" onclick="logout()">
         <a href="others">ログアウト</a>
 	</li>
 </ul>
+
+<script>
+	function logout() {
+		if (confirm("ログアウトします")) {
+			window.location.href = 'logout';
+		} else {
+			return false;
+		}
+	}
+</script>
 
 </body>
 </html>
